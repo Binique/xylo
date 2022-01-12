@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 void main() {
@@ -22,121 +24,38 @@ class xyloSong extends StatefulWidget {
 }
 class _xyloSongState extends State<xyloSong> {
   AudioCache player = AudioCache();
+
+
+   Opti(Color? couleur, String fichier) {
+    return Expanded(
+      child:
+      TextButton(
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+        ),
+        onPressed: () {
+          player.play(fichier);
+        },
+        child:
+        Container(
+          color: couleur,
+        ),
+      ),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(
-            child:
-                TextButton(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                  ),
-                  onPressed: () {
-                  player.play('note1.wav');
-                  },
-                  child:
-                  Container(
-                  color: Colors.red,
-                  ),
-        ),
-        ),
-        Expanded(
-          child:
-              TextButton(
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                ),
-
-              onPressed: () {
-                player.play('note2.wav');
-             },
-                child:
-          Container(
-            color: Colors.orange,
-          ),
-        ),
-        ),
-        Expanded(
-          child:
-          TextButton(
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.zero,
-            ),
-
-            onPressed: () {
-              player.play('note3.wav');
-            },
-            child:
-            Container(
-              color: Colors.yellow,
-            ),
-          ),
-        ),
-        Expanded(
-          child:
-          TextButton(
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.zero,
-            ),
-
-            onPressed: () {
-              player.play('note4.wav');
-            },
-            child:
-            Container(
-              color: Colors.green,
-            ),
-          ),
-        ),
-        Expanded(
-          child:
-          TextButton(
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.zero,
-            ),
-
-            onPressed: () {
-              player.play('note5.wav');
-            },
-            child:
-            Container(
-              color: Colors.teal,
-            ),
-          ),
-        ),
-        Expanded(
-          child:
-          TextButton(
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.zero,
-            ),
-
-            onPressed: () {
-              player.play('note6.wav');
-            },
-            child:
-            Container(
-              color: Colors.blue,
-            ),
-          ),
-        ),
-        Expanded(
-          child:
-          TextButton(
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.zero,
-            ),
-
-            onPressed: () {
-              player.play('note7.wav');
-            },
-            child:
-            Container(
-              color: Colors.purple,
-            ),
-          ),
-        ),
+        Opti(Colors.red,'note1.wav'),
+        Opti(Colors.orange,'note2.wav'),
+        Opti(Colors.yellow,'note3.wav'),
+        Opti(Colors.green,'note4.wav'),
+        Opti(Colors.teal,'note5.wav'),
+        Opti(Colors.blue,'note6.wav'),
+        Opti(Colors.purple,'note7.wav'),
       ],
     );
   }
